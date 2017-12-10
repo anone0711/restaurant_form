@@ -1,1 +1,12 @@
 <h1>餐廳後台</h1>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+    <%= restaurant.name %>
+    <%= link_to 'Show', admin_restaurant_path(retaurant) %> <!-- 對應admin/restaurant#show 的 route path -->
+    <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %> <!-- 對應 admin/restaurant#edit的route path -->
+    <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, date: {confirm:"Are you sure"} %> <!-- 對應admin/restaurant#delete的route path 因為admin_restaurant_path的預設方法為get 所以要規定method為delete 但為什麼沒有 delete_admin_restaurant_path? -->
+  </li>
+  <% end %>
+</ul>
+<%= link_to 'New restaurant', new_admin_restaurants_path %>
