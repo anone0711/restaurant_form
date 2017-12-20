@@ -1,13 +1,29 @@
-<h1>餐廳後台</h1>
-<ul>
-  <% @restaurants.each do |restaurant| %>
-  <li>
-    <%= restaurant.name %>
-    <%= link_to 'Show', admin_restaurant_path(restaurant) %> <!-- 對應admin/restaurant#show 的 route path -->
-    <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %> <!-- 對應 admin/restaurant#edit的route path -->
-    <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure"} %> <!-- 對應admin/restaurant#delete的route path 因為admin_restaurant_path的預設方法為get 所以要規定method為delete 但為什麼沒有 delete_admin_restaurant_path? -->
-  </li>
-  <% end %>
-</ul>
-<%= paginate @restaurants %>
-<%= link_to 'New restaurant', new_admin_restaurant_path %>
+<div class="container">
+  <h1 style="margin-bottom: 20px;">餐廳後台</h1>
+  <%= link_to 'New restaurant', new_admin_restaurant_path, class: "btn btn-primary", style: "margin-bottom: 20px;" %>
+  <table class="table table-bordered">
+    <tr>
+      <th>#</th>
+      <th>餐廳名稱</th>
+      <th>#</th>
+    </tr>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td>
+        <%= restaurant.id %>
+      </td>
+      <td>
+        <%= restaurant.name %>
+      </td>
+      <td>
+        <%= link_to 'Show', admin_restaurant_path(restaurant) %> <!-- 對應admin/restaurant#show 的 route path -->
+        <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %> <!-- 對應 admin/restaurant#edit的route path -->
+        <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure"} %> <!-- 對應admin/restaurant#delete的route path 因為admin_restaurant_path的預設方法為get 所以要規定method為delete 但為什麼沒有 delete_admin_restaurant_path? -->
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <div class="text-center">
+    <%= paginate @restaurants %>
+  </div>
+</div>
