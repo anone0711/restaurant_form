@@ -14,3 +14,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.error {
+  margin-bottom: 20px;
+}
+
+.error .error-msg {
+  color:red;
+  font-size: 20px;
+}
