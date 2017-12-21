@@ -37,15 +37,13 @@
             <%= f.text_area :description, class: "form-control" %>
           </div>
           <div class="form-group">
-            <%= f.label :image, "Photo" %>
-            <%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
+            <%= f.label :image, "Photo", class: "form-label" %>
+            <%= image_tag @restaurant.image, width: '300px', class: "img-responsive" if @restaurant.image? %>
             <%= f.file_field :image %>
           </div>
-          <%= f.submit class: "btn btn-primary" %>
+          <%= f.submit class: "btn btn-primary", style: "display: inline-block" %>
+          <%= link_to 'Back to index page', admin_restaurants_path, class: "btn btn-primary" %>
         <% end %>
-        <div style="margin-top: 10px;">
-            <%= link_to 'Back to index page', admin_restaurants_path %>
-        </div>
       </div>
     </div>
   </div>
