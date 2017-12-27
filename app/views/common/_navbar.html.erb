@@ -8,10 +8,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.email %></a>
-        </li>
         <% if current_user %>
+          <li>
+            <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.email %></a>
+          </li>
           <li> <%= link_to('登出', destroy_user_session_path, method: :delete) %> <!-- 也可以改成 :method => :delete --></li>
           <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
         <% else %>
