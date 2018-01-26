@@ -8,16 +8,16 @@
           <div class="restaurant-item">
             <%= image_tag restautant.image, class: "img-responsive center-block"%>
             <div class="caption">
-              <h3><%= link_to('restautant name', restaurant_path(restautant)) %></h3>
-              <p><%= restautant.category.name %></p>
+              <h3><%= link_to(restautant.name, restaurant_path(restautant)) %></h3>
+              <p class="label label-default"><%= restautant.category.name %></p>
               <p><%= truncate(restautant.description, length: 80) %></p>
             </div>
           </div>
         </div>
       <% end %>
-      <div class="text-center">
-        <%= paginate @restaurants %>
-      </div>
+    </div>
+    <div class="text-center">
+      <%= paginate @restaurants %>
     </div>
   </div>
 </div>
