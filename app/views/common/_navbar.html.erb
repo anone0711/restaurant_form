@@ -10,9 +10,15 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <% if current_user.admin? %>
-            <li>
-              <%= link_to('管理後台', admin_restaurants_path) %>
-            </li>
+            <%if params[:controller] == "admin/restaurants" %>
+              <li>
+                <%= link_to('瀏覽前台', root_path) %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to('管理後台', admin_restaurants_path) %>
+              </li>
+            <% end %>
           <% end %>
           <li>
             <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.email %></a>
