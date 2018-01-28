@@ -30,7 +30,7 @@ namespace :dev do
         )
     end
     puts "have created fake users"
-    puts puts "now you have #{User.count} restaurants data"
+    puts "now you have #{User.count} users data"
   end
 
   task fake_comment: :environment do
@@ -42,6 +42,6 @@ namespace :dev do
       end
     end
     puts "have created fake comments"
-    puts puts "now you have #{Comment.count} restaurants data"
+    puts "now you have #{Comment.count} comments data"
   end
 end
