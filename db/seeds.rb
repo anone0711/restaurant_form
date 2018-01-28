@@ -8,7 +8,7 @@
 
 Category.destroy_all
 
-category_list = [
+category_list =[
   { name: "中式料理" },
   { name: "日本料理" },
   { name: "義大利料理" },
@@ -21,8 +21,9 @@ category_list = [
 category_list.each do |category|
   Category.create( name: category[:name] )
 end
+puts "Category created!"
 
-puts "Category created"
+# Default admin
 
-User.create(email: "admin@admin.com", role: "amdin", password: "12345678" )
+User.create(email: "admin@example.com", password: "12345678", role: "admin", name: "admin")
 puts "Default admin created!"

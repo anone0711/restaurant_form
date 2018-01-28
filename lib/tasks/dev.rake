@@ -23,8 +23,11 @@ namespace :dev do
     end
 
     20.times do |i|
-      User.create!(email: FFaker::Internet.free_email,
-        password: "12345678")
+      user_email = FFaker::Internet.free_email
+      User.create!(name: user_email.split("@")[0],
+        email: user_email,
+        password: "12345678"
+        )
     end
     puts "have created fake users"
     puts puts "now you have #{User.count} restaurants data"
