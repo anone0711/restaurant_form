@@ -21,7 +21,11 @@
             <% end %>
           <% end %>
           <li>
-            <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.email %></a>
+            <% if current_user.name %>
+              <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.name %></a>
+            <% else %>
+              <a class="navbar-brand" href="/" style="font-size: 20px;">Hi, <%= current_user.email %></a>
+            <% end %>
           </li>          
           <li>
             <%= link_to('profile', user_path(current_user)) %>
