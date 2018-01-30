@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       get :feeds
     end
 
+    collection do
+      get :ranking
+    end
+
     member do
       get :dashboard
     end
