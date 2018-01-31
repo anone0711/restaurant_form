@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+  
   before_action :get_user, only: [:show, :edit, :update]
   def show
     @commented_restaurants = @user.restaurants.uniq
