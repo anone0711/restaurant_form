@@ -20,7 +20,7 @@
             <%= image_tag restaurant.image, class: "img-responsive center-block"%>
           </div>
           <div class="col-md-9">
-            <h4><%= restaurant.name %>&nbsp&nbsp<small class="label label-default">收藏數 : <%= restaurant.favorites_count %></small></h4>
+            <h4><%= restaurant.name %>&nbsp&nbsp<small class="label label-default">收藏數 : <%= restaurant.favorites.size %></small></h4>
             <p><%= truncate(restaurant.description, length: 80) %></p>
             <%= link_to 'Show', restaurant_path(restaurant), class: "btn btn-primary" %>
             <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %> 
