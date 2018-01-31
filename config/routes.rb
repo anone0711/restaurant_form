@@ -36,5 +36,7 @@ Rails.application.routes.draw do
   end
   resources :categories, only: :show
 
-  resources :users, only: [:show, :update, :edit]
+  resources :users, only: [:index, :show, :update, :edit]
+
+  resources :followships, only: [:create, :destroy]
 end
